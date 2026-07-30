@@ -1,0 +1,70 @@
+{
+  // ---- Prettier: format automatically ----
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "editor.formatOnSaveMode": "file",
+  "prettier.requireConfig": true,
+  "[javascript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[javascriptreact]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[typescript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[typescriptreact]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[json]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[jsonc]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[css]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[html]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[markdown]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+
+  // ---- Suggestions: fire as soon as you start typing ----
+  "editor.quickSuggestions": {
+    "other": true,
+    "comments": false,
+    // this is the key one: suggests Tailwind classes inside className="..."
+    "strings": true
+  },
+  "editor.quickSuggestionsDelay": 0,
+  "editor.suggestOnTriggerCharacters": true,
+  "editor.wordBasedSuggestions": "matchingDocuments",
+  "editor.acceptSuggestionOnEnter": "on",
+  "editor.tabCompletion": "on",
+  "editor.suggest.preview": true,
+  "editor.suggest.showStatusBar": true,
+  "editor.inlineSuggest.enabled": true,
+
+  // ---- Emmet: tag/attribute expansion in JSX ----
+  "emmet.showSuggestionsAsSnippets": true,
+  "emmet.triggerExpansionOnTab": true,
+  // Do NOT map typescriptreact/javascriptreact to "html" here: VS Code already has
+  // native JSX Emmet for them, and forcing the html profile makes abbreviations
+  // expand to class="..." instead of className="...".
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact",
+    "typescript": "typescriptreact"
+  },
+
+  // ---- TS/JS: auto-import + attribute completions ----
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "typescript.suggest.autoImports": true,
+  "javascript.suggest.autoImports": true,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "typescript.preferences.importModuleSpecifier": "non-relative",
+
+  // ---- Tailwind IntelliSense (v4 reads the CSS entry, not a JS config) ----
+  "tailwindCSS.experimental.configFile": "app/app.css",
+  // includeLanguages is only for languages the extension doesn't know; it already
+  // supports typescriptreact/javascriptreact natively, so listing them here is a no-op.
+  // classFunctions supersedes the old experimental.classRegex hand-rolled patterns.
+  "tailwindCSS.classFunctions": ["cn", "clsx", "cva", "twMerge"],
+  "tailwindCSS.emmetCompletions": true,
+  "tailwindCSS.validate": true,
+
+  // Tailwind v4 at-rules (@theme, @utility, @apply) aren't in the built-in CSS grammar.
+  // Left as language `css` on purpose so Prettier still formats these files on save.
+  "css.lint.unknownAtRules": "ignore",
+
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "never"
+  },
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true
+}

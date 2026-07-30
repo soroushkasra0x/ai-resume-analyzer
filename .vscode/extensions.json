@@ -1,0 +1,30 @@
+{
+  "recommendations": [
+    // Formatting / linting
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint",
+
+    // Stack-specific
+    "bradlc.vscode-tailwindcss",
+    "dsznajder.es7-react-js-snippets",
+    "yoavbls.pretty-ts-errors",
+    "ms-azuretools.vscode-docker",
+
+    // Editing quality of life
+    "usernamehw.errorlens",
+    "christian-kohler.path-intellisense",
+    "formulahendry.auto-rename-tag",
+    "mikestead.dotenv",
+
+    // Git
+    "eamodio.gitlens"
+  ],
+  "unwantedRecommendations": [
+    // Nightly/experimental TS servers override the pinned typescript 5.9.3
+    // that typescript.tsdk points at in settings.json.
+    "ms-vscode.vscode-typescript-next",
+    "typescriptteam.native-preview",
+    // Vite serves this app; a static file server is not applicable.
+    "ritwickdey.liveserver"
+  ]
+}
