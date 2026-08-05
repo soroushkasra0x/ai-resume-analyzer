@@ -94,7 +94,7 @@ form {
 }
 
 @utility resume-card {
-  @apply flex h-[560px] w-[350px] flex-col gap-8 rounded-2xl bg-white p-4 lg:w-[430px] xl:w-[490px];
+  @apply flex h-[560px] w-[350px] flex-col gap-8 rounded-2xl bg-white p-4 lg:w-[400px];
 }
 
 @utility resume-card-header {

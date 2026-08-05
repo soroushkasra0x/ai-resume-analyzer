@@ -49,6 +49,15 @@
   "typescript.updateImportsOnFileMove.enabled": "always",
   "typescript.preferences.importModuleSpecifier": "non-relative",
 
+  // ---- Path Intellisense: make "/" mean the public/ folder ----
+  // Vite serves public/ at the web root, so "/images/bg-main.svg" on disk is
+  // "public/images/bg-main.svg". Without this mapping the extension resolves "/"
+  // to the workspace root, finds no "images" folder there, and offers nothing.
+  "path-intellisense.mappings": {
+    "/": "${workspaceFolder}/public"
+  },
+  "path-intellisense.showHiddenFiles": false,
+
   // ---- Tailwind IntelliSense (v4 reads the CSS entry, not a JS config) ----
   "tailwindCSS.experimental.configFile": "app/app.css",
   // includeLanguages is only for languages the extension doesn't know; it already
